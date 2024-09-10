@@ -36,22 +36,68 @@
             <div id="menu" class="flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 hidden">
                 <ul class="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                     <li class="text-gray-600 hover:text-indigo-600">
-                        <a href="javascript:void(0)">About Us</a>
+                        <a href="#team">About Us</a>
                     </li>
                     <li class="text-gray-600 hover:text-indigo-600">
-                        <a href="javascript:void(0)">Contact Us</a>
+                        <a href="#contact-us">Contact Us</a>
                     </li>
-
                 </ul>
             </div>
             <div class="hidden md:inline-block">
-                <a href="javascript:void(0)"
+                <!-- old button -->
+                <!-- <a href="javascript:void(0)"
                     class="py-2 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow">
                     Book An Appointment
-                </a>
+                </a> -->
+                <!-- Button to open the modal -->
+                <button id="openModalBtn"
+                    class="py-2 px-4 text-white font-medium bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-lg">
+                    Book an Appointment
+                </button>
             </div>
         </div>
     </nav>
+    <!-- Modal for form when asking to book an appointment-->
+    <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-900 bg-opacity-50">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden md:max-w-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                <img alt="Doctor"
+                    src="assets/young-uncle.jpg"
+                    class="h-32 w-full object-cover md:h-full">
+                <div class="p-6 text-center md:col-span-2">
+                    <h2 class="text-2xl font-bold">Book an Appointment</h2>
+                    <p class="mt-2 text-gray-600">Complete the form below to schedule your appointment with Ash's Uncle,
+                        a leading cardiologist in Hobe Sound.</p>
+
+                    <!-- Form -->
+                    <form class="space-y-5 mt-5">
+                        <div>
+                            <label class="font-medium text-gray-700">Full Name</label>
+                            <input type="text" required
+                                class="w-full mt-2 px-3 py-2 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg" />
+                        </div>
+                        <div>
+                            <label class="font-medium text-gray-700">Phone</label>
+                            <input type="text" required
+                                class="w-full mt-2 px-3 py-2 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg" />
+                        </div>
+                        <div>
+                            <label class="font-medium text-gray-700">Message</label>
+                            <textarea required
+                                class="w-full mt-2 px-3 py-2 h-28 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg"></textarea>
+                        </div>
+                        <button
+                            class="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-lg">Submit</button>
+                    </form>
+
+                    <!-- Close Button -->
+                    <button id="closeModalBtn" class="mt-4 text-gray-500 hover:text-gray-700">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <section class="py-14">
         <div class="max-w-screen-xl mx-auto md:px-8">
             <div class="items-center gap-x-12 sm:px-4 md:px-0 lg:flex">
@@ -121,7 +167,7 @@
             style="background: linear-gradient(268.24deg, rgba(59, 130, 246, 0.76) 50%, rgba(59, 130, 246, 0.545528) 80.61%, rgba(55, 48, 163, 0) 117.35%);">
         </div>
     </section>
-    <div class="bg-white py-24 sm:py-32">
+    <div id="team" class="bg-white py-24 sm:py-32">
         <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
             <div class="max-w-2xl">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Team</h2>
@@ -190,7 +236,7 @@
             </ul>
         </div>
     </div>
-    <section class="bg-indigo-600">
+    <section class="bg-indigo-600" id="contact-us">
         <div class="py-14">
             <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
                 <div class="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
@@ -202,7 +248,7 @@
                         <p class="text-white">
                             We’re here to help and answer any question you might have, We
                             look forward to hearing from you! Please fill out the form, or
-                            us the contact information bellow.
+                            us the contact information below.
                         </p>
                         <div>
                             <ul class="mt-6 flex flex-wrap gap-x-10 gap-y-6 items-center">
@@ -223,12 +269,7 @@
                                     class="w-full mt-2 px-3 py-2 bg-transparent outline-none border focus:border-white shadow-sm rounded-lg text-white " />
                             </div>
                             <div>
-                                <label class="font-medium text-white"> Email </label>
-                                <input type="email" required
-                                    class="w-full mt-2 px-3 py-2 bg-transparent outline-none border focus:border-white shadow-sm rounded-lg text-white " />
-                            </div>
-                            <div>
-                                <label class="font-medium text-white"> Company </label>
+                                <label class="font-medium text-white"> Phone </label>
                                 <input type="text" required
                                     class="w-full mt-2 px-3 py-2 bg-transparent outline-none border focus:border-white shadow-sm rounded-lg text-white " />
                             </div>
@@ -329,16 +370,37 @@
         </footer>
     </div>
     <script>
-        // JavaScript for menu toggle
+    // JavaScript for menu toggle
         const menuToggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
         const menuIconOpen = document.getElementById('menu-icon-open');
         const menuIconClose = document.getElementById('menu-icon-close');
-
         menuToggle.addEventListener('click', () => {
             menu.classList.toggle('hidden');
             menuIconOpen.classList.toggle('hidden');
             menuIconClose.classList.toggle('hidden');
+        });
+
+    // code for modal/modal toggle
+        const modal = document.getElementById('modal');
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        // open modal
+        openModalBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        });
+        // close modal
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        });
+        // close modal when clicking outside of modal content
+        window.addEventListener('click', (e) => {
+            if (e.target == modal ) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            };
         });
     </script>
 
