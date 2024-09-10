@@ -16,7 +16,7 @@
                 Now accepting new patients! Call or book an appointment today!
             </p>
             <a href="javascript:void(0)"
-                class="flex-none inline-block w-full mt-3 py-2 px-3 text-center text-indigo-600 font-medium bg-white duration-150 hover:bg-gray-400 active:bg-gray-400 rounded-lg sm:w-auto sm:mt-0 sm:text-sm">
+                class="openModalBtn flex-none inline-block w-full mt-3 py-2 px-3 text-center text-indigo-600 font-medium bg-white duration-150 hover:bg-gray-400 active:bg-gray-400 rounded-lg sm:w-auto sm:mt-0 sm:text-sm">
                 Schedule Appointment
             </a>
         </div>
@@ -55,58 +55,13 @@
                 </ul>
             </div>
             <div class="hidden md:inline-block">
-                <!-- old button -->
-                <!-- <a href="javascript:void(0)"
-                    class="py-2 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow">
-                    Book An Appointment
-                </a> -->
-                <!-- Button to open the modal -->
-                <button id="openModalBtn"
-                    class="py-2 px-4 text-white font-medium bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-lg">
+                <button
+                    class="openModalBtn py-2 px-4 text-white font-medium bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-lg">
                     Schedule an Appointment
                 </button>
             </div>
         </div>
     </nav>
-    <!-- Modal for form when asking to book an appointment-->
-    <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-900 bg-opacity-50">
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden md:max-w-2xl">
-            <div class="grid grid-cols-1 md:grid-cols-3">
-                <img alt="Doctor" src="assets/young-uncle.jpg" class="h-32 w-full object-cover md:h-full">
-                <div class="p-6 text-center md:col-span-2">
-                    <h2 class="text-2xl font-bold">Book an Appointment</h2>
-                    <p class="mt-2 text-gray-600">Complete the form below to schedule your appointment with Ash's Uncle,
-                        a leading cardiologist in Hobe Sound.</p>
-
-                    <!-- Form -->
-                    <form class="space-y-5 mt-5">
-                        <div>
-                            <label class="font-medium text-gray-700">Full Name</label>
-                            <input type="text" required
-                                class="w-full mt-2 px-3 py-2 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg" />
-                        </div>
-                        <div>
-                            <label class="font-medium text-gray-700">Phone</label>
-                            <input type="text" required
-                                class="w-full mt-2 px-3 py-2 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg" />
-                        </div>
-                        <div>
-                            <label class="font-medium text-gray-700">Message</label>
-                            <textarea required
-                                class="w-full mt-2 px-3 py-2 h-28 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg"></textarea>
-                        </div>
-                        <button
-                            class="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-lg">Submit</button>
-                    </form>
-
-                    <!-- Close Button -->
-                    <button id="closeModalBtn" class="mt-4 text-gray-500 hover:text-gray-700">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <section class="py-14">
         <div class="max-w-screen-xl mx-auto md:px-8">
             <div class="items-center gap-x-12 sm:px-4 md:px-0 lg:flex">
@@ -140,8 +95,8 @@
                         online today
                     </p>
                     <a href="javascript:void(0)"
-                        class="inline-flex gap-x-1 items-center text-indigo-600 hover:text-indigo-500 duration-150 font-medium">
-                        Book Appointment
+                        class="openModalBtn inline-flex gap-x-1 items-center text-indigo-600 hover:text-indigo-500 duration-150 font-medium">
+                        Schedule Appointment
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                             <path fill-rule="evenodd"
                                 d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
@@ -167,7 +122,7 @@
             </div>
             <div class="mt-8">
                 <a href="javascript:void(0)"
-                    class="inline-block py-2 px-4 text-gray-800 font-medium bg-white duration-150 hover:bg-gray-300 active:bg-gray-200 rounded-full">
+                    class="openModalBtn inline-block py-2 px-4 text-gray-800 font-medium bg-white duration-150 hover:bg-gray-300 active:bg-gray-200 rounded-full">
                     Schedule an Appointment
                 </a>
             </div>
@@ -343,7 +298,7 @@
                             </div>
                             <button
                                 class="block w-auto py-2.5 px-4 font-medium text-sm text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow">
-                                Email us
+                                Request info
                             </button>
                         </form>
                     </div>
@@ -400,9 +355,44 @@
             </div>
         </footer>
     </div>
-    <button id="backToTop" class="hidden fixed bottom-5 right-5 bg-blue-600 text-white py-3 px-6 rounded-lg">
+    <button id="backToTop" class="hidden fixed bottom-16 right-16 bg-red-600 text-white py-3 px-6 rounded-lg">
         Back to Top
     </button>
+    <!-- Modal for form when asking to book an appointment-->
+    <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-900 bg-opacity-50">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden md:max-w-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                <img alt="Doctor" src="assets/young-uncle.jpg" class="h-32 w-full object-cover md:h-full">
+                <div class="p-6 text-center md:col-span-2">
+                    <h2 class="text-2xl font-bold">Book an Appointment</h2>
+                    <p class="mt-2 text-gray-600">Complete the form below to schedule your appointment with Ash's Uncle,
+                        a leading cardiologist in Hobe Sound.</p>
+                    <!-- Form -->
+                    <form class="space-y-5 mt-5">
+                        <div>
+                            <label class="font-medium text-gray-700">Full Name</label>
+                            <input type="text" required
+                                class="w-full mt-2 px-3 py-2 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg" />
+                        </div>
+                        <div>
+                            <label class="font-medium text-gray-700">Phone</label>
+                            <input type="text" required
+                                class="w-full mt-2 px-3 py-2 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg" />
+                        </div>
+                        <div>
+                            <label class="font-medium text-gray-700">Message</label>
+                            <textarea required
+                                class="w-full mt-2 px-3 py-2 h-28 bg-gray-50 outline-none border border-gray-300 focus:border-indigo-600 shadow-sm rounded-lg"></textarea>
+                        </div>
+                        <button
+                            class="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-lg">Submit</button>
+                    </form>
+                    <!-- Close Button -->
+                    <button id="closeModalBtn" class="mt-4 text-gray-500 hover:text-gray-700">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         // JavaScript for menu toggle
         const menuToggle = document.getElementById('menu-toggle');
@@ -417,12 +407,14 @@
 
         // code for modal/modal toggle
         const modal = document.getElementById('modal');
-        const openModalBtn = document.getElementById('openModalBtn');
+        const openModalBtn = document.querySelectorAll('.openModalBtn');
         const closeModalBtn = document.getElementById('closeModalBtn');
-        // open modal
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+        // open modal when any of the buttons are clicked
+        openModalBtn.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex')
+            });
         });
         // close modal
         closeModalBtn.addEventListener('click', () => {
